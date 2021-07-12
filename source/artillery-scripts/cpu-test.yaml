@@ -1,0 +1,14 @@
+config:
+  target: "http://34.64.117.104"
+  phases:
+      # 테스트 실행 시간
+    - duration: 60
+      # 가상 사용자 수(vuser)
+      arrivalRate: 8
+      name: Warm up
+scenarios:
+  # We define one scenario:
+  - name: "just get hash"
+    flow:
+      - get:
+          url: "/hash/123"
